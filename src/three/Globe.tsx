@@ -8,12 +8,12 @@ interface GlobeProps {
 }
 
 function EarthSphere() {
-  const texture = useLoader(TextureLoader, '/images/earth.jpg')
+  const texture = useLoader(TextureLoader, '/images/earth2.jpg')
 
   return (
     <mesh>
       <sphereGeometry args={[1.5, 64, 64]} />
-      <meshStandardMaterial map={texture} roughness={0.6} metalness={0.05} />
+      <meshStandardMaterial map={texture} roughness={0.5} metalness={0.05} />
     </mesh>
   )
 }
@@ -21,11 +21,11 @@ function EarthSphere() {
 function Atmosphere() {
   return (
     <>
-      <mesh scale={1.025}>
+      <mesh scale={1.02}>
         <sphereGeometry args={[1.5, 64, 64]} />
-        <meshBasicMaterial color="#3a8fff" transparent opacity={0.07} side={THREE.BackSide} />
+        <meshBasicMaterial color="#4a9fff" transparent opacity={0.08} side={THREE.BackSide} />
       </mesh>
-      <mesh scale={1.06}>
+      <mesh scale={1.05}>
         <sphereGeometry args={[1.5, 64, 64]} />
         <meshBasicMaterial color="#1a6aff" transparent opacity={0.04} side={THREE.BackSide} />
       </mesh>
