@@ -19,11 +19,11 @@ export function Scene({ scrollProgress }: SceneProps) {
       if (imgRef.current) {
         const scrollRotate = scrollProgress * 60
         const totalRotation = rotationRef.current + scrollRotate
-        const translateY = scrollProgress * -150
-        const scale = 1 + scrollProgress * 0.05
-        const opacity = 1 - scrollProgress * 0.5
+        const translateY = scrollProgress * -100
+        const scale = 1.3 + scrollProgress * 0.1
+        const opacity = 1 - scrollProgress * 0.4
 
-        imgRef.current.style.transform = `translateY(${translateY}px) scale(${scale}) rotate(${totalRotation}deg)`
+        imgRef.current.style.transform = `translate(-50%, -50%) translateY(${translateY}px) scale(${scale}) rotate(${totalRotation}deg)`
         imgRef.current.style.opacity = `${Math.max(opacity, 0.2)}`
       }
       frameRef.current = requestAnimationFrame(animate)
@@ -34,12 +34,12 @@ export function Scene({ scrollProgress }: SceneProps) {
   }, [scrollProgress])
 
   return (
-    <div className="fixed inset-0 z-0 overflow-hidden bg-black">
+    <div className="fixed inset-0 z-0 overflow-hidden bg-[#020a18]">
       <img
         ref={imgRef}
         src="/images/earth-night.jpg"
         alt=""
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-auto h-auto min-w-[100vmin] min-h-[100vmin] max-w-none will-change-transform"
+        className="absolute top-1/2 left-1/2 w-[250vmax] h-[250vmax] max-w-none object-cover will-change-transform"
         style={{ imageRendering: 'auto' }}
       />
     </div>
