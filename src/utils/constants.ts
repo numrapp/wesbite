@@ -12,7 +12,7 @@ export const APP_CONFIG = {
   tagline: '160 taal. 1 app. Factureren was nog nooit zo makkelijk.',
   description: 'De slimste factuur-app van Nederland. Verstuur offertes en facturen in 160 talen.',
   bundleId: 'com.numr.invoices',
-  appStoreUrl: 'https://apps.apple.com/app/numr-invoices/id0000000000',
+  appStoreUrl: 'https://apps.apple.com/app/numr/id6761337551',
 } as const
 
 export const FEATURES = [
