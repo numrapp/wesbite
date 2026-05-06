@@ -5,9 +5,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const steps = [
-  { num: '01', title: 'Kies de taal', desc: 'Selecteer de taal van je klant uit 160+ opties. Van Arabisch tot Zweeds.', icon: '🌍' },
-  { num: '02', title: 'Kies je klant', desc: 'Selecteer een bestaande klant of voeg een nieuwe toe met KvK-nummer.', icon: '👤' },
-  { num: '03', title: 'Verstuur', desc: 'Verstuur direct via WhatsApp of e-mail. Je klant ontvangt het meteen.', icon: '🚀' },
+  { num: '01', title: 'Maak je factuur of offerte', desc: 'Maak eenvoudig je factuur of offerte aan. Professioneel en snel.', icon: '📝' },
+  { num: '02', title: 'Kies de taal', desc: 'Selecteer de taal van je klant uit 160+ opties. Van Arabisch tot Zweeds.', icon: '🌍' },
+  { num: '03', title: 'Kies je klant', desc: 'Selecteer een bestaande klant of voeg een nieuwe toe met KvK-nummer.', icon: '👤' },
+  { num: '04', title: 'Verstuur', desc: 'Verstuur direct via WhatsApp of e-mail. Je klant ontvangt het meteen.', icon: '🚀' },
 ]
 
 export function HowItWorks() {
@@ -28,7 +29,7 @@ export function HowItWorks() {
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-6xl font-bold mb-4 text-white">
-            Drie stappen. <span className="text-primary">Klaar.</span>
+            Vier stappen. <span className="text-primary">Klaar.</span>
           </h2>
         </div>
 

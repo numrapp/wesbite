@@ -18,7 +18,7 @@ export const APP_CONFIG = {
 export const FEATURES = [
   {
     title: '160+ Talen',
-    description: 'Maak offertes en facturen in de taal van je klant. Ideaal voor internationaal ondernemen.',
+    description: 'Werk in jouw eigen taal — numr ondersteunt meer dan 160 talen, zodat je de app gebruikt in een taal die bij jou past.',
     icon: 'globe',
   },
   {
@@ -32,7 +32,7 @@ export const FEATURES = [
     icon: 'whatsapp',
   },
   {
-    title: 'BTW 21% · 9% · Verlegd',
+    title: 'BTW 21% · 9% · Verlegd · Nultarief',
     description: 'Alle Nederlandse BTW-tarieven. Automatisch berekend conform de wet.',
     icon: 'shield',
   },
