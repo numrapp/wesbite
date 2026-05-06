@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #CDFF00;
+  --color-primary-dim: #a8d600;
+  --color-navy: #1a2235;
+  --color-navy-deep: #0f1520;
+  --color-navy-light: #243044;
+  --color-accent: #CDFF00;
+  --color-glass: rgba(255, 255, 255, 0.03);
+  --color-glass-border: rgba(205, 255, 0, 0.15);
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  background: #0f1520;
+  color: white;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(205, 255, 0, 0.6), 0 0 60px rgba(205, 255, 0, 0.3);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(205, 255, 0, 0.12);
+  border-radius: 1.5rem;
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(205, 255, 0, 0.4);
+  box-shadow: 0 0 40px rgba(205, 255, 0, 0.08);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes scroll-hint {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-scroll-hint {
+  animation: scroll-hint 2s ease-in-out infinite;
+}
+
+#root {
+  width: 100%;
+}
