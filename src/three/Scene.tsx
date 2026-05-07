@@ -10,7 +10,7 @@ export function Scene({ scrollProgress }: SceneProps) {
   return (
     <div className="fixed inset-0 z-0 overflow-hidden bg-black">
       <img
-        src="/images/earth-rotate.gif"
+        src="/images/earth-night.jpg"
         alt=""
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto max-w-none object-cover"
         style={{
