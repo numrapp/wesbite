@@ -13,6 +13,7 @@ export const APP_CONFIG = {
   description: 'De slimste factuur-app van Nederland. Verstuur offertes en facturen in 40+ talen.',
   bundleId: 'com.numr.invoices',
   appStoreUrl: 'https://apps.apple.com/app/numr/id6761337551',
+  playStoreUrl: 'https://play.google.com/store/apps/details?id=com.numr.invoices',
 } as const
 
 export const FEATURES = [
