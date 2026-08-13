@@ -9,7 +9,7 @@ export function Footer() {
               <span className="font-[family-name:var(--font-display)] text-xl font-bold text-white">numr</span>
             </div>
             <p className="text-white/30 text-sm max-w-sm leading-relaxed">
-              De slimste factuur-app van Nederland. Factureer professioneel in 160+ talen, volledig BTW-conform.
+              De slimste factuur-app van Nederland. Factureer professioneel in 40+ talen, volledig BTW-conform.
             </p>
           </div>
 

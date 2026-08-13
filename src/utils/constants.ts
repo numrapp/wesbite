@@ -9,16 +9,16 @@ export const COLORS = {
 
 export const APP_CONFIG = {
   name: 'numr',
-  tagline: '160 taal. 1 app. Factureren was nog nooit zo makkelijk.',
-  description: 'De slimste factuur-app van Nederland. Verstuur offertes en facturen in 160 talen.',
+  tagline: '40+ talen. 1 app. Factureren was nog nooit zo makkelijk.',
+  description: 'De slimste factuur-app van Nederland. Verstuur offertes en facturen in 40+ talen.',
   bundleId: 'com.numr.invoices',
   appStoreUrl: 'https://apps.apple.com/app/numr/id6761337551',
 } as const
 
 export const FEATURES = [
   {
-    title: '160+ Talen',
-    description: 'Werk in jouw eigen taal — numr ondersteunt meer dan 160 talen, zodat je de app gebruikt in een taal die bij jou past.',
+    title: '40+ Talen',
+    description: 'Werk in jouw eigen taal — numr ondersteunt meer dan 40 talen, zodat je de app gebruikt in een taal die bij jou past.',
     icon: 'globe',
   },
   {
@@ -68,7 +68,7 @@ export const PRICING = {
     'BTW 21% · 9% · Verlegd · Nultarief',
     'Verstuur via WhatsApp & e-mail',
     'BTW Hulp slimme assistent',
-    '160+ talen ondersteund',
+    '40+ talen ondersteund',
     'iCloud sync · veilig opgeslagen',
   ],
 } as const

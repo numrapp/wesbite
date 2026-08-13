@@ -28,7 +28,7 @@ export function DownloadCTA() {
             Begin vandaag met <span className="text-primary">numr</span>
           </h2>
           <p className="text-white/40 text-lg mb-10 max-w-md mx-auto">
-            Gratis te downloaden. Start direct met factureren in 160+ talen.
+            Gratis te downloaden. Start direct met factureren in 40+ talen.
           </p>
 
           <a href={APP_CONFIG.appStoreUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-2xl hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-200 hover:scale-[1.02]">

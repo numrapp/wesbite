@@ -23,7 +23,7 @@ export function Hero() {
           <span className="text-white">Offertes & facturen versturen</span>
           <br />
           <span className="text-white">in </span>
-          <span className="text-primary glow-text">160+ talen.</span>
+          <span className="text-primary glow-text">40+ talen.</span>
         </h1>
 
         <p className="text-lg md:text-xl text-white/50 mb-10 max-w-2xl mx-auto leading-relaxed opacity-0">
