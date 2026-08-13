@@ -17,7 +17,7 @@ export function Hero() {
       <div ref={containerRef} className="relative z-10 text-center max-w-4xl mx-auto">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 mb-8 opacity-0">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          <span className="text-sm text-primary/80 font-medium">Nu beschikbaar in de App Store</span>
+          <span className="text-sm text-primary/80 font-medium">Nu beschikbaar in de App Store en Google Play</span>
         </div>
 
         <h1 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] mb-6 opacity-0">
@@ -37,7 +37,7 @@ export function Hero() {
               <AppleIcon size={20} />
               App Store
             </a>
-            <a href={APP_CONFIG.playStoreUrl} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 px-7 py-4 bg-white/10 border border-white/15 text-white font-bold rounded-2xl backdrop-blur-sm hover:bg-white/15 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)] transition-all duration-300 hover:scale-[1.02]">
+            <a href={APP_CONFIG.playStoreUrl} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 px-7 py-4 bg-primary text-navy-deep font-bold rounded-2xl hover:shadow-[0_0_40px_rgba(205,255,0,0.3)] transition-all duration-300 hover:scale-[1.02]">
               <GooglePlayIcon size={20} />
               Google Play
             </a>
