@@ -8,8 +8,8 @@
 /* Hallmark · waive 47b · one frame style around the app screens · the screens read as a phone without a drawn device */
 /* Hallmark · waive 84 · the four app screens are rebuilt in HTML from the real captures, same content · captures scaled down 4x turned the figures to blur */
 /* Hallmark · waive 82 · svg.orb is one animated sphere from thinking-orbs, not a count · it spins while numr maakt de PDF van je factuur, it counts nothing */
-@import url("./tokens.css");
-@import url("./base.css");
+@import url("./tokens.css?v=20261030-2");
+@import url("./base.css?v=20261030-2");
 
 /* Apple-like greys tinted toward the numr navy, the brand lime kept for signals */
 :root {
@@ -265,18 +265,6 @@ h2 { letter-spacing: -0.025em; }
   .band .screen .app { width: 300px; height: 506px; transform: scale(0.4667); transform-origin: 0 0; }
 }
 @media (prefers-reduced-motion: reduce) { .js .band { transform: none; } .band::after { opacity: 0; } }
-
-/* the close: the dashboard in front, two more numr screens fanned out behind it */
-.fan { position: relative; display: flex; justify-content: center; margin-top: var(--space-2xl); }
-.close .fan .screen { margin: 0; }
-.close .fan .fan-mid { position: relative; z-index: var(--z-raised); }
-.fan .fan-side { position: absolute; top: var(--space-2xl); width: 270px; box-shadow: 0 0 0 8px var(--color-night-3), var(--shadow-float); filter: brightness(0.82); }
-.fan .fan-left { right: calc(50% + 70px); transform: rotate(-12deg); transform-origin: 100% 100%; }
-.fan .fan-right { left: calc(50% + 70px); transform: rotate(12deg); transform-origin: 0 100%; }
-/* on phones the same fan as on desktop, scaled down as one piece */
-@media (max-width: 40rem) {
-  .fan { left: 50%; width: 760px; margin-left: -380px; margin-bottom: calc(var(--space-4xl) * -2 - var(--space-xl)); transform: scale(0.5); transform-origin: 50% 0; }
-}
 
 /* languages, on night */
 .talen { background: var(--color-night); color: var(--color-on-night); }
