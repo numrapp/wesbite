@@ -253,12 +253,16 @@ h2 { letter-spacing: -0.025em; }
 .js .band { transform: scale(calc(1 - var(--cover, 0) * 0.06)); }
 .band::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--color-ink); opacity: calc(var(--cover, 0) * 0.28); pointer-events: none; }
 @media (max-width: 64rem) {
-  .bands { gap: var(--space-2xl); }
-  .band { top: calc(var(--nav-h) + var(--space-sm) + var(--i, 0) * var(--space-xs)); gap: var(--space-lg); padding: var(--space-lg) var(--space-lg) 0; border-radius: var(--radius-card); }
-  .band h3 { font-size: var(--text-xl); }
-  .band > div p { font-size: var(--text-md); }
+  .bands { gap: var(--space-xl); }
+  .band { top: calc(var(--nav-h) + var(--space-md) + var(--i, 0) * var(--space-sm)); grid-template-columns: minmax(0, 1fr) 140px; gap: var(--space-md); align-items: end; min-height: 0; padding: var(--space-lg) var(--space-md) 0 var(--space-lg); border-radius: var(--radius-card); }
+  .band > div { align-self: center; padding-bottom: var(--space-lg); }
+  .band .n { font-size: var(--text-md); }
+  .band h3 { margin-top: var(--space-2xs); font-size: var(--text-lg); letter-spacing: -0.02em; }
+  .band > div p { margin-top: var(--space-2xs); font-size: var(--text-sm); line-height: 1.4; }
   .band .chips { display: none; }
-  .band .screen { width: min(100%, 250px); aspect-ratio: 9 / 11.5; }
+  /* the app screen keeps its 300px layout and is scaled into a small phone, as on desktop */
+  .band .screen { width: 140px; height: 236px; aspect-ratio: auto; border-radius: 22px 22px 0 0; box-shadow: 0 0 0 5px var(--color-ink), var(--shadow-float); }
+  .band .screen .app { width: 300px; height: 506px; transform: scale(0.4667); transform-origin: 0 0; }
 }
 @media (prefers-reduced-motion: reduce) { .js .band { transform: none; } .band::after { opacity: 0; } }
 
@@ -336,8 +340,6 @@ h2 { letter-spacing: -0.025em; }
 @media (max-width: 40rem) {
   .nav ul { display: none; }
   .hero { padding-top: var(--space-2xl); }
-  .band { grid-template-columns: minmax(0, 1fr); min-height: 0; padding: var(--space-xl) var(--space-lg) 0; border-radius: var(--radius-card); }
-  .band > div { padding-bottom: 0; }
   .trades, .perks { grid-template-columns: minmax(0, 1fr); }
   .trades li { min-height: 120px; padding: var(--space-lg); }
   .say { padding: var(--space-xl) var(--space-md); }
