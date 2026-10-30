@@ -1,21 +1,306 @@
 <!doctype html>
 <html lang="nl">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="numr - De slimste factuur-app van Nederland. Verstuur offertes en facturen in 40+ talen." />
-    <meta property="og:title" content="numr - Factureren in 40+ talen" />
-    <meta property="og:description" content="De slimste factuur-app van Nederland. Verstuur offertes en facturen in 40+ talen." />
-    <meta property="og:type" content="website" />
-    <title>numr - Factureren in 40+ talen</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>numr factureren</title>
+<meta name="description" content="Offertes en facturen in minder dan een minuut, vanaf je telefoon. numr regelt je btw, PDF en verzending, in 40+ talen.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,700&family=Inter+Tight:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.6zM14.1 5.5c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.7-1.3z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M4.2 2.4c-.3.3-.4.7-.4 1.2v16.8c0 .5.1.9.4 1.2l9.5-9.6-9.5-9.6zm10.7 8.4 2.9-2.9L6 1.3c-.3-.2-.7-.3-1-.2l9.9 9.7zm0 2.4L5 22.9c.3.1.7 0 1-.2l11.8-6.6-2.9-2.9zm4.1-4.6-3.1 3.4 3.1 3.4 3.4-1.9c1-.6 1-2.4 0-3l-3.4-1.9z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.5 9.5 17.5 19.5 6.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="container">
+    <a class="wordmark" href="#top" aria-label="numr, naar boven"><img src="assets/logo.png" alt="" width="28" height="28">numr</a>
+    <nav aria-label="Hoofdmenu">
+      <ul>
+        <li><a href="#hoe-werkt-het">Zo werkt het</a></li>
+        <li><a href="#talen">Talen</a></li>
+        <li><a href="#prijs">Prijs</a></li>
+        <li><a href="#faq">Vragen</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#download">Download</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="intro">
+        <h1 id="hero-title">Je factuur klaar. <span>Je zaak onder controle.</span></h1>
+        <p class="lead">Offertes en facturen in minder dan een minuut, vanaf je telefoon.</p>
+        <div class="stores">
+          <a class="btn" href="https://apps.apple.com/nl/app/numr/id6761337551"><svg aria-hidden="true"><use href="#i-apple"/></svg><span class="store"><small>Download in de</small>App Store</span></a>
+          <a class="btn btn--quiet" href="https://play.google.com/store/apps/details?id=com.numr.invoices"><svg aria-hidden="true"><use href="#i-play"/></svg><span class="store"><small>Beschikbaar op</small>Google Play</span></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="demo-sec" aria-label="numr maakt een factuur">
+    <div class="container">
+      <div class="hero-stage" id="hero-stage" data-step="done">
+        <figure class="phone" data-slot="hero-phone" role="img" aria-label="numr maakt een factuur voor stucwerk van 2800 euro, rekent 21% btw uit tot 3.388 euro en verstuurt de PDF">
+          <div class="app scene scene--line" aria-hidden="true">
+            <div class="a-steps"><span class="on">Type</span><span class="on">Klant</span><span class="now">Regels</span><span>Controleren</span></div>
+            <div class="a-card a-form">
+              <label>Klant<span class="a-in">Van Dijk Stukadoors</span></label>
+              <label>Omschrijving<span class="a-in"><span id="h-desc">Stucwerk</span><i class="caret"></i></span></label>
+              <div class="a-two a-two--price"><label>Aantal<span class="a-in">1</span></label><label>Prijs<span class="a-in"><span id="h-price">2800</span><em class="a-tog"><b>Excl.</b>Incl.</em></span></label></div>
+              <label>BTW<span class="a-in">21% Hoog</span></label>
+            </div>
+            <div class="a-foot"><p><span>Totaal excl. BTW</span><span id="h-excl">€ 2.800,00</span></p><p class="a-tot"><span>Totaal incl. BTW</span><b id="h-total">€ 3.388,00</b></p><span class="a-btn" id="h-send"><svg class="orb" id="orb-hero"></svg><span id="h-send-label">Versturen</span></span></div>
+          </div>
+          <div class="app scene scene--sent" aria-hidden="true">
+            <div class="a-done"><span class="a-check"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p class="a-title">Factuur verzonden</p><p class="a-sub">FAC-2026-0020</p></div>
+            <div class="a-dark a-sentcard"><p><b>Van Dijk Stukadoors</b><span class="a-dim">Vervaldatum 2026-09-28</span></p><p class="a-lime">€ 3.388,00</p></div>
+            <div class="a-share"><span>PDF</span><span class="wa">WhatsApp</span><span class="sh">Delen</span></div>
+            <span class="a-btn">Klaar</span>
+          </div>
+        </figure>
+        <div class="float f1" aria-hidden="true"><b>21% btw</b><span>automatisch berekend</span></div>
+        <div class="float f2" aria-hidden="true"><b>PDF klaar</b><span>netjes voor je klant</span></div>
+        <div class="float f3" aria-hidden="true"><b>Gedeeld</b><span>via WhatsApp</span></div>
+        <p class="beat" id="h-beat">Verzonden naar je klant</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="hoe-werkt-het" aria-labelledby="steps-title">
+    <div class="container stack">
+      <div class="pin">
+        <h2 id="steps-title">Van klus naar factuur in vier tikken.</h2>
+        <p>Geen boekhoudsoftware. numr vraagt alleen wat nodig is.</p>
+        <ol>
+          <li><a href="#stap-1" aria-current="step"><span>1</span>Kies je document</a></li>
+          <li><a href="#stap-2"><span>2</span>Klant en regels</a></li>
+          <li><a href="#stap-3"><span>3</span>Verstuur direct</a></li>
+          <li><a href="#stap-4"><span>4</span>Zie wat binnen is</a></li>
+        </ol>
+      </div>
+      <div class="bands">
+        <article class="band" id="stap-1">
+          <div>
+            <div class="n" aria-hidden="true">1</div>
+            <h3>Kies je document</h3>
+            <p>Offerte, factuur of creditnota. Een geaccepteerde offerte wordt met één tik een factuur.</p>
+          </div>
+          <figure class="screen app-dash" data-slot="app-dash" role="img" aria-label="Het dashboard van numr: openstaand en betaald bedrag, 19 documenten, 5 klanten, 9 verzonden, en knoppen voor nieuwe offerte, nieuwe factuur en creditnota"><div class="app" aria-hidden="true"><p class="a-title">Goedemiddag</p><p class="a-sub">Dashboard</p><div class="a-dark"><div class="a-row"><span class="a-dim">Openstaand</span><span class="a-live">Live</span></div><p class="a-big">€ 0,00</p><p class="a-paid">€ 12.705,00<small>Betaald</small></p></div><div class="a-card a-stats"><p><b>19</b>Documenten</p><p><b>5</b>Klanten</p><p><b>9</b>Verzonden</p></div><div class="a-card a-list"><p><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 19V6M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Nieuwe offerte<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></p><p><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Nieuwe factuur<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></p><p><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v13M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Creditnota<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></p></div><div class="a-card a-recent"><p class="a-head">Recente activiteit<span>Alles</span></p><p><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span class="a-who"><b>FAC-2026-0011</b>Van Dijk Stukadoors</span><span class="a-amt">€ 2.420,00<em class="ok">Betaald</em></span></p></div></div></figure>
+        </article>
+        <article class="band" id="stap-2">
+          <div>
+            <div class="n" aria-hidden="true">2</div>
+            <h3>Klant en regels</h3>
+            <p>KvK- en btw-gegevens op één plek. numr rekent btw en totalen uit.</p>
+            <div class="chips"><span>21%</span><span>9%</span><span>Btw verlegd</span><span>Nultarief</span></div>
+          </div>
+          <figure class="screen app-line" data-slot="app-line" role="img" aria-label="Een factuurregel in numr: stucwerk, aantal 1, prijs 2800 euro exclusief btw, 21% btw, totaal 3.388 euro"><div class="app" aria-hidden="true"><div class="a-steps"><span class="on">Type</span><span class="on">Klant</span><span class="now">Regels</span><span>Controleren</span></div><div class="a-card a-form"><div class="a-two"><label>Factuurdatum<span class="a-in">14 sep 2026</span></label><label>Betalingstermijn<span class="a-in">14<em>dagen</em></span></label></div><label>Omschrijving<span class="a-in">Stucwerk</span></label><div class="a-two a-two--price"><label>Aantal<span class="a-in">1</span></label><label>Prijs<span class="a-in">2800<em class="a-tog"><b>Excl.</b>Incl.</em></span></label></div><label>BTW<span class="a-in">21% Hoog</span></label></div><div class="a-foot"><p><span>Totaal excl. BTW</span><span>€ 2.800,00</span></p><p class="a-tot"><span>Totaal incl. BTW</span><b>€ 3.388,00</b></p><span class="a-btn">Controleren</span></div></div></figure>
+        </article>
+        <article class="band" id="stap-3">
+          <div>
+            <div class="n" aria-hidden="true">3</div>
+            <h3>Verstuur direct</h3>
+            <p>Een nette PDF via e-mail, WhatsApp of elke andere app.</p>
+          </div>
+          <figure class="screen app-sent" data-slot="app-sent" role="img" aria-label="Factuur verzonden in numr: FAC-2026-0020 aan Van Dijk Stukadoors, 3.388 euro, te delen als PDF, via WhatsApp of andere apps"><div class="app" aria-hidden="true"><div class="a-done"><span class="a-check"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p class="a-title">Factuur verzonden</p><p class="a-sub">FAC-2026-0020</p></div><div class="a-dark a-sentcard"><p><b>Van Dijk Stukadoors</b><span class="a-dim">Vervaldatum 2026-09-28</span></p><p class="a-lime">€ 3.388,00</p></div><div class="a-share"><span>PDF</span><span class="wa">WhatsApp</span><span class="sh">Delen</span></div><span class="a-btn">Klaar</span></div></figure>
+        </article>
+        <article class="band" id="stap-4">
+          <div>
+            <div class="n" aria-hidden="true">4</div>
+            <h3>Zie wat binnen is</h3>
+            <p>Live overzicht van wat betaald, verzonden en nog open is.</p>
+          </div>
+          <figure class="screen app-docs" data-slot="app-docs" role="img" aria-label="De documentenlijst in numr: facturen per klant met vervaldatum, bedrag en status betaald of verzonden"><div class="app" aria-hidden="true"><p class="a-title a-h">Documenten</p><div class="a-dark a-row"><span><span class="a-dim">Openstaand</span><b class="a-mid">€ 0,00</b></span><span class="a-right"><span class="a-lime">€ 12.705</span><span class="a-dim">0 vervallen</span></span></div><div class="a-tabs"><span class="on">Facturen<em>9</em></span><span>Offertes<em>4</em></span><span>Creditnota’s</span></div><div class="a-card a-doc"><p><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span class="a-who"><b>Van Dijk Stukadoors</b>FAC-2026-0011</span><em class="ok">Betaald</em></p><p class="a-due"><span><small>Vervaldatum</small>2026-07-18</span><b>€ 2.420,00</b></p></div><div class="a-card a-doc"><p><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span class="a-who"><b>De Vries Bouw</b>FAC-2026-0010</span><em class="ok">Betaald</em></p><p class="a-due"><span><small>Vervaldatum</small>2026-07-17</span><b>€ 3.025,00</b></p></div><div class="a-card a-doc"><p><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span class="a-who"><b>Bakker Installatie</b>FAC-2026-0009</span><em class="ok">Betaald</em></p><p class="a-due"><span><small>Vervaldatum</small>2026-07-17</span><b>€ 2.420,00</b></p></div><div class="a-card a-doc"><p><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span class="a-who"><b>Mulder Elektra</b>FAC-2026-0004</span><em class="sent">Verzonden</em></p><p class="a-due"><span><small>Vervaldatum</small>2026-07-17</span><b>€ 2.420,00</b></p></div></div></figure>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec talen" id="talen" aria-labelledby="talen-title">
+    <div class="container">
+      <div class="sec-head center">
+        <h2 id="talen-title">40+ talen. Eén helder proces.</h2>
+        <p>Werk in de taal die jij het best begrijpt. Je factuur blijft gewoon geldig in Nederland.</p>
+      </div>
+      <div class="say rise">
+        <fieldset>
+          <legend class="visually-hidden">Kies een taal</legend>
+          <div class="seg" id="langs">
+            <input type="radio" name="taal" id="l-nl" value="nl" checked><label for="l-nl" lang="nl">Nederlands</label>
+            <input type="radio" name="taal" id="l-tr" value="tr"><label for="l-tr" lang="tr">Türkçe</label>
+            <input type="radio" name="taal" id="l-bg" value="bg"><label for="l-bg" lang="bg">Български</label>
+            <input type="radio" name="taal" id="l-ro" value="ro"><label for="l-ro" lang="ro">Română</label>
+            <input type="radio" name="taal" id="l-el" value="el"><label for="l-el" lang="el">Ελληνικά</label>
+            <input type="radio" name="taal" id="l-ar" value="ar"><label for="l-ar" lang="ar">العربية</label>
+          </div>
+        </fieldset>
+        <q id="say" lang="nl" aria-live="polite">Factuur verzonden</q>
+        <p class="doc">FAC-2026-0020, opgemaakt in het Nederlands</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec ink" aria-labelledby="ink-title">
+    <div class="container">
+      <h2 id="ink-title">Jij doet je werk. <span>numr doet het papierwerk.</span></h2>
+      <p class="sub">Voor zelfstandigen die professioneel factureren, zonder uren achter een computer.</p>
+      <ul class="trades">
+        <li class="rise">Bouw en installatie</li>
+        <li class="rise">Taxi en transport</li>
+        <li class="rise">Kappers en dienstverleners</li>
+        <li class="rise">Freelancers en consultants</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec prijs" id="prijs" aria-labelledby="prijs-title">
+    <div class="container">
+      <div class="offer center">
+        <h2 id="prijs-title">numr Pro.</h2>
+        <fieldset>
+          <legend class="visually-hidden">Betaalperiode</legend>
+          <div class="seg">
+            <input type="radio" name="periode" id="p-maand" value="maand" checked><label for="p-maand">Maandelijks</label>
+            <input type="radio" name="periode" id="p-jaar" value="jaar"><label for="p-jaar">Jaarlijks</label>
+          </div>
+        </fieldset>
+        <p class="price" aria-live="polite"><sup>€</sup><span id="p-euro">7</span><sup id="p-cent">,99</sup><small id="p-unit">per maand</small></p>
+        <p class="per" id="p-per">Maandelijks, of bespaar met een jaarabonnement.</p>
+        <div class="stores"><a class="btn" href="https://apps.apple.com/nl/app/numr/id6761337551"><svg aria-hidden="true"><use href="#i-apple"/></svg><span class="store"><small>Download in de</small>App Store</span></a><a class="btn btn--quiet" href="https://play.google.com/store/apps/details?id=com.numr.invoices"><svg aria-hidden="true"><use href="#i-play"/></svg><span class="store"><small>Beschikbaar op</small>Google Play</span></a></div>
+        <ul class="perks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Onbeperkt facturen, offertes en creditnota’s</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Slimme btw-assistent</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>PDF, e-mail en WhatsApp</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>40+ talen en klantenbeheer</li>
+        </ul>
+        <p class="fine">Opzegbaar via de instellingen van je App Store of Google Play.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec faq" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="faq-title">Goed om te weten.</h2>
+        </div>
+        <details><summary>Kan ik offertes omzetten naar facturen?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Ja. Een geaccepteerde offerte zet je met één tik om in een factuur, zonder alle gegevens opnieuw in te voeren.</p></details>
+        <details><summary>Welke btw-tarieven ondersteunt numr?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Onder andere 21%, 9%, btw verlegd en het nultarief. De btw-assistent helpt je bij de keuze.</p></details>
+        <details><summary>Kan ik documenten via WhatsApp versturen?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Ja. Je deelt facturen en offertes als PDF via WhatsApp, e-mail en andere apps op je telefoon.</p></details>
+        <details><summary>Is numr ook geschikt voor anderstalige ondernemers?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Ja. De app ondersteunt meer dan 40 talen, terwijl je documenten geschikt blijven voor zakendoen in Nederland.</p></details>
+        <details><summary>Waar worden mijn gegevens opgeslagen?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Versleuteld, binnen de Europese Unie.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="close" id="download">
+    <div class="container">
+      <h2>Je volgende factuur maak je met numr.</h2>
+      <p class="sign">Regel je administratie waar je ook bent.</p>
+      <div class="stores">
+        <a class="btn" href="https://apps.apple.com/nl/app/numr/id6761337551"><svg aria-hidden="true"><use href="#i-apple"/></svg><span class="store"><small>Download in de</small>App Store</span></a>
+        <a class="btn btn--quiet" href="https://play.google.com/store/apps/details?id=com.numr.invoices"><svg aria-hidden="true"><use href="#i-play"/></svg><span class="store"><small>Beschikbaar op</small>Google Play</span></a>
+      </div>
+      <figure class="screen app-dash rise" data-slot="app-dash rise" role="img" aria-label="Het dashboard van numr: openstaand en betaald bedrag, 19 documenten, 5 klanten, 9 verzonden, en knoppen voor nieuwe offerte, nieuwe factuur en creditnota"><div class="app" aria-hidden="true"><p class="a-title">Goedemiddag</p><p class="a-sub">Dashboard</p><div class="a-dark"><div class="a-row"><span class="a-dim">Openstaand</span><span class="a-live">Live</span></div><p class="a-big">€ 0,00</p><p class="a-paid">€ 12.705,00<small>Betaald</small></p></div><div class="a-card a-stats"><p><b>19</b>Documenten</p><p><b>5</b>Klanten</p><p><b>9</b>Verzonden</p></div><div class="a-card a-list"><p><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 19V6M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Nieuwe offerte<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></p><p><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Nieuwe factuur<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></p><p><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v13M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Creditnota<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></p></div><div class="a-card a-recent"><p class="a-head">Recente activiteit<span>Alles</span></p><p><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span class="a-who"><b>FAC-2026-0011</b>Van Dijk Stukadoors</span><span class="a-amt">€ 2.420,00<em class="ok">Betaald</em></span></p></div></div></figure>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="container">
+      <p>Een vraag? <a href="mailto:support@numr.nl">support@numr.nl</a></p>
+      <ul>
+        <li><a href="https://api.numr.nl/privacy">Privacy</a></li>
+        <li><a href="https://api.numr.nl/voorwaarden">Voorwaarden</a></li>
+        <li><a href="https://api.numr.nl/support">Support</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const eur = (n) => "€ " + n.toLocaleString("nl-NL", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const num = (v) => { const n = parseFloat(String(v).replace(/\./g, "").replace(",", ".")); return Number.isFinite(n) ? n : NaN; };
+
+  const say = { nl: "Factuur verzonden", tr: "Fatura gönderildi", bg: "Фактурата е изпратена", ro: "Factura a fost trimisă", el: "Το τιμολόγιο στάλθηκε", ar: "تم إرسال الفاتورة" };
+  $("#langs").addEventListener("change", (e) => { const q = $("#say"), l = e.target.value; q.textContent = say[l]; q.lang = l; q.dir = l === "ar" ? "rtl" : "ltr"; });
+
+  const per = { jaar: ["79", ",99", "per jaar", "Dat is € 6,67 per maand."], maand: ["7", ",99", "per maand", "Maandelijks, of bespaar met een jaarabonnement."] };
+  document.querySelectorAll('input[name="periode"]').forEach((r) => r.addEventListener("change", () => {
+    const [a, b, c, d] = per[r.value]; $("#p-euro").textContent = a; $("#p-cent").textContent = b; $("#p-unit").textContent = c; $("#p-per").textContent = d;
+  }));
+
+  const rises = document.querySelectorAll(".rise");
+  if (!("IntersectionObserver" in window)) { rises.forEach((r) => r.classList.add("in")); return; }
+  const show = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); show.unobserve(en.target); } }), { rootMargin: "0px 0px -10% 0px" });
+  rises.forEach((r) => show.observe(r));
+
+  const links = [...document.querySelectorAll(".pin a")];
+  const io = new IntersectionObserver((es) => es.forEach((en) => {
+    if (!en.isIntersecting) return;
+    links.forEach((a) => a.hash === "#" + en.target.id ? a.setAttribute("aria-current", "step") : a.removeAttribute("aria-current"));
+  }), { rootMargin: "-45% 0px -45% 0px" });
+  document.querySelectorAll(".band").forEach((b) => io.observe(b));
+})();
+</script>
+<script>
+// the phone stays pinned while the visitor scrolls; how far they have scrolled decides how far the invoice has got
+(() => {
+  const stage = document.getElementById("hero-stage");
+  if (!stage || matchMedia("(prefers-reduced-motion: reduce)").matches) { document.documentElement.classList.add("no-motion"); return; }
+  const sec = stage.closest(".demo-sec");
+  const desc = document.getElementById("h-desc"), price = document.getElementById("h-price"), excl = document.getElementById("h-excl"), total = document.getElementById("h-total"), label = document.getElementById("h-send-label"), beat = document.getElementById("h-beat");
+  const eur = (n) => "€ " + n.toLocaleString("nl-NL", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const DESC = "Stucwerk", PRICE = "2800", BASE = 2800;
+  const beats = { type: "Typ je factuurregel", calc: "numr rekent de btw uit", send: "De PDF wordt gemaakt", sent: "Verzonden naar je klant" };
+  sec.classList.add("scrolly");
+
+  function render(p) {
+    let step, v = BASE;
+    if (p < 0.3) {
+      step = "type"; v = 0;
+      const n = Math.round((p / 0.3) * (DESC.length + PRICE.length));
+      desc.textContent = DESC.slice(0, Math.min(n, DESC.length));
+      price.textContent = PRICE.slice(0, Math.max(0, n - DESC.length));
+    } else {
+      desc.textContent = DESC; price.textContent = PRICE;
+      if (p < 0.5) { step = "calc"; v = BASE * Math.min(1, (p - 0.3) / 0.15); }
+      else step = p < 0.66 ? "send" : "sent";
+    }
+    excl.textContent = eur(v); total.textContent = eur(v * 1.21);
+    label.textContent = step === "send" ? "PDF opmaken" : "Versturen";
+    if (stage.dataset.step !== step) { stage.dataset.step = step; beat.textContent = beats[step]; }
+  }
+
+  let queued = false;
+  const update = () => {
+    queued = false;
+    const r = sec.getBoundingClientRect(), run = sec.offsetHeight - innerHeight;
+    render(Math.min(1, Math.max(0, run > 0 ? -r.top / run : 1)));
+  };
+  addEventListener("scroll", () => { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
+  addEventListener("resize", update);
+  update();
+})();
+</script>
+<script type="module">
+import { mountOrb } from "https://cdn.jsdelivr.net/npm/@yogesharc/thinking-orbs@0.1.2/dist/orb-core.js";
+mountOrb(document.getElementById("orb-hero"), { state: "working", size: 18 });
+</script>
+</body>
 </html>
