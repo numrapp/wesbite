@@ -119,7 +119,7 @@ fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
 .beat { position: absolute; bottom: var(--space-lg); left: 50%; z-index: var(--z-raised); transform: translateX(-50%); margin: 0; padding: var(--space-xs) var(--space-md); border-radius: var(--radius-pill); background: var(--color-ink); color: var(--color-on-night); font-size: var(--text-sm); font-weight: 500; white-space: nowrap; }
 
 /* pinned while the visitor scrolls through the four steps, then the page carries on */
-.demo-sec.scrolly { height: 340svh; padding-bottom: 0; }
+.demo-sec.scrolly { height: 560svh; padding-bottom: 0; }
 .demo-sec.scrolly > .container { height: 100%; }
 .scrolly .hero-stage { position: sticky; top: var(--nav-h); height: calc(100svh - var(--nav-h)); min-height: 0; padding-bottom: 0; }
 
@@ -247,13 +247,13 @@ h2 { letter-spacing: -0.025em; }
 .app .a-share .sh { background: var(--app-sent-soft); color: var(--app-sent); }
 
 /* the steps as a stack: each card pins under the nav, the next slides over it */
-.bands { gap: var(--space-3xl); padding-bottom: var(--space-2xl); }
+.bands { gap: calc(var(--space-4xl) * 2); padding-bottom: var(--space-2xl); }
 .band { position: sticky; top: calc(var(--nav-h) + var(--space-xl) + var(--i, 0) * var(--space-sm)); transform-origin: 50% 0; box-shadow: 0 -1px 0 var(--color-rule), var(--shadow-stack); }
 .band:nth-child(2) { --i: 1; } .band:nth-child(3) { --i: 2; } .band:nth-child(4) { --i: 3; }
 .js .band { transform: scale(calc(1 - var(--cover, 0) * 0.06)); }
 .band::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--color-ink); opacity: calc(var(--cover, 0) * 0.28); pointer-events: none; }
 @media (max-width: 64rem) {
-  .bands { gap: var(--space-xl); }
+  .bands { gap: var(--space-4xl); }
   .band { top: calc(var(--nav-h) + var(--space-md) + var(--i, 0) * var(--space-sm)); grid-template-columns: minmax(0, 1fr) 140px; gap: var(--space-md); align-items: end; min-height: 0; padding: var(--space-lg) var(--space-md) 0 var(--space-lg); border-radius: var(--radius-card); }
   .band > div { align-self: center; padding-bottom: var(--space-lg); }
   .band .n { font-size: var(--text-md); }
@@ -265,6 +265,18 @@ h2 { letter-spacing: -0.025em; }
   .band .screen .app { width: 300px; height: 506px; transform: scale(0.4667); transform-origin: 0 0; }
 }
 @media (prefers-reduced-motion: reduce) { .js .band { transform: none; } .band::after { opacity: 0; } }
+
+/* the close: the dashboard in front, two more numr screens fanned out behind it */
+.fan { position: relative; display: flex; justify-content: center; margin-top: var(--space-2xl); }
+.close .fan .screen { margin: 0; }
+.close .fan .fan-mid { position: relative; z-index: var(--z-raised); }
+.fan .fan-side { position: absolute; top: var(--space-2xl); width: 270px; box-shadow: 0 0 0 8px var(--color-night-3), var(--shadow-float); filter: brightness(0.82); }
+.fan .fan-left { right: calc(50% + 70px); transform: rotate(-12deg); transform-origin: 100% 100%; }
+.fan .fan-right { left: calc(50% + 70px); transform: rotate(12deg); transform-origin: 0 100%; }
+/* on phones the same fan as on desktop, scaled down as one piece */
+@media (max-width: 40rem) {
+  .fan { left: 50%; width: 760px; margin-left: -380px; margin-bottom: calc(var(--space-4xl) * -2 - var(--space-xl)); transform: scale(0.5); transform-origin: 50% 0; }
+}
 
 /* languages, on night */
 .talen { background: var(--color-night); color: var(--color-on-night); }
