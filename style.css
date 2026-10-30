@@ -32,6 +32,7 @@
   --app-bg: oklch(93.6% 0.006 286); --app-card: oklch(99.6% 0.001 286); --app-dark: oklch(19% 0.012 255); --app-dark-2: oklch(27% 0.014 255);
   --app-ink: oklch(19% 0.012 255); --app-muted: oklch(52% 0.006 286); --app-faint: oklch(70% 0.004 286); --app-line: oklch(91% 0.004 286);
   --app-lime: oklch(90% 0.2 124); --app-ok: oklch(52% 0.15 148); --app-ok-soft: oklch(95% 0.04 148); --app-sent: oklch(50% 0.13 268); --app-sent-soft: oklch(95% 0.025 268); --app-wa: oklch(52% 0.14 150); --app-wa-soft: oklch(96% 0.03 150);
+  --shadow-stack: 0 -24px 48px -28px oklch(20% 0.03 266 / 0.35);
   --nav-h: 56px;
 }
 
@@ -244,6 +245,22 @@ h2 { letter-spacing: -0.025em; }
 .app .a-share span { display: grid; place-items: center; min-height: 46px; border-radius: 12px; background: var(--app-card); font-size: 11px; font-weight: 700; }
 .app .a-share .wa { background: var(--app-wa-soft); color: var(--app-wa); }
 .app .a-share .sh { background: var(--app-sent-soft); color: var(--app-sent); }
+
+/* the steps as a stack: each card pins under the nav, the next slides over it */
+.bands { gap: var(--space-3xl); padding-bottom: var(--space-2xl); }
+.band { position: sticky; top: calc(var(--nav-h) + var(--space-xl) + var(--i, 0) * var(--space-sm)); transform-origin: 50% 0; box-shadow: 0 -1px 0 var(--color-rule), var(--shadow-stack); }
+.band:nth-child(2) { --i: 1; } .band:nth-child(3) { --i: 2; } .band:nth-child(4) { --i: 3; }
+.js .band { transform: scale(calc(1 - var(--cover, 0) * 0.06)); }
+.band::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--color-ink); opacity: calc(var(--cover, 0) * 0.28); pointer-events: none; }
+@media (max-width: 64rem) {
+  .bands { gap: var(--space-2xl); }
+  .band { top: calc(var(--nav-h) + var(--space-sm) + var(--i, 0) * var(--space-xs)); gap: var(--space-lg); padding: var(--space-lg) var(--space-lg) 0; border-radius: var(--radius-card); }
+  .band h3 { font-size: var(--text-xl); }
+  .band > div p { font-size: var(--text-md); }
+  .band .chips { display: none; }
+  .band .screen { width: min(100%, 250px); aspect-ratio: 9 / 11.5; }
+}
+@media (prefers-reduced-motion: reduce) { .js .band { transform: none; } .band::after { opacity: 0; } }
 
 /* languages, on night */
 .talen { background: var(--color-night); color: var(--color-on-night); }
